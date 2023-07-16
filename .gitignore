@@ -1,9 +1,8 @@
 /turkisHome/main/static/main/img/
-/turkisHome/main/static/main/css/
-!/turkisHome/main/static/main/css/style.css
-/turkisHome/main/static/main/js/
-!/turkisHome/main/static/main/js/script.js
 turkisHome/turkisHome/settings.py
+turkisHome/main/static/main/js/bootstrap
+turkisHome/main/static/main/css/bootstrap
+
 
 .idea
 

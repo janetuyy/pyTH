@@ -1,0 +1,49 @@
+{% extends 'main/examp.html' %}
+
+{% block contentFlats %}
+{% load static %}
+<div class="headFlats bg-transparent shadow-none container mt-1">
+    <div class="row">
+        <div class="col-md-12 justify-content-between d-flex align-items-center">
+
+                    <button class="rEstateVariant">
+                        <a href="flats"><img class="graficlogo" src="{% static 'main/img/chooseFlatsBlack.svg' %}" alt="contacts"></a>
+                    </button>
+
+                    <button class="rEstateVariant">
+                        <a href="new"><img class="graficlogo" src="{% static 'main/img/chooseNewWhite.svg' %}" alt="contacts"></a>
+                    </button>
+
+                    <button class="rEstateVariant">
+                        <a href="sec"><img class="graficlogo" src="{% static 'main/img/chooseSecWhite.svg' %}" alt="contacts"></a>
+                    </button>
+
+                    <button class="rEstateVariant">
+                        <a href="com"><img class="graficlogo" src="{% static 'main/img/chooseComWhite.svg' %}" alt="contacts"></a>
+                    </button>
+
+                    <button class="rEstateVariant">
+                        <a href="#"><img class="graficlogo" src="{% static 'main/img/settingsButton.svg' %}" alt="contacts"></a>
+                    </button>
+
+        </div>
+    </div>
+</div>
+<div class="chooseVariant container mt-5">
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

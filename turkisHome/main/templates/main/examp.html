@@ -1,0 +1,88 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+    <title>Turkish Home</title>
+    <link href="{% static 'main/css/bootstrap/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'main/css/style.css' %}" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="body-main">
+    <script src="{% static 'main/js/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="{% static 'main/js/slick.min.js' %}"></script>
+    <script src="{% static 'main/js/script.js' %}"></script>
+
+    <header class="header">
+        <div class="nav">
+            <div class="container justify-content-center d-flex align-items-center">
+                <div class="row justify-content-between">
+                    <div class="col-3">
+                        <a href="index">
+                            <img class="graficlogo d-none d-md-block align-items-center" src="{% static 'main/img/logoHead.svg' %}"
+                                alt="logo">
+                            <img class="graficlogo d-md-none align-items-center" src="{% static 'main/img/offLogoTest.svg' %}" alt="logo">
+                        </a>
+                    </div>
+                    <div
+                        class="btnsMenu col-md-5 col-lg-4 col-sm-7 col-9 justify-content-between d-flex align-items-center">
+                        <button class="btnConsult">
+                            <a href="#aplicForm"><img class="graficlogo" src="{% static 'main/img/btnConsult.svg' %}" alt="contacts"></a>
+                        </button>
+
+                        <button class="btnContacts">
+                            <a href="#contactUs"><img class="graficlogo" src="{% static 'main/img/btnContacts.svg' %}" alt="contacts"></a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+        {% block contentFlats %}
+        {% endblock %}
+    <main>
+
+        <!-- контактная инормация -->
+
+        <div id="contactUs" class="contactUs mt-5 d-flex justify-content-center align-items-center">
+            <h2 class="shadow-none text-white">Контактная информация</h2>
+        </div>
+        <section class="mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12 justify-content-center d-flex align-items-center">
+                        <p>+905070509605<br>
+                            cirahhusein8@gmail.com<br>
+                            Uğur Apartmanı, Oba, Yaşar, Oba Mahallesi, Uğur Sk.<br>
+                            No:10, 07460, 07460 Alanya/Antalya, Турция
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-12 justify-content-between d-flex align-items-center" id="listContact">
+                        <ul class="justify-content-between d-flex w-100">
+                            <li><a href="mailto:cirahhusein8@gmail.com"><img class="contactIcon" src="{% static 'main/img/mailButton.svg' %}" alt="mail"></a></li>
+                            <li><a href="https://wa.me/905070509605"><img class="contactIcon" src="{% static 'main/img/whatsappButton.svg' %}" alt="whatsapp"></a></li>
+                            <li><a href="tel:+905070509605"><img class="contactIcon" src="{% static 'main/img/phoneButton.svg' %}" alt="call"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- карта -->
+
+        <iframe class="mt-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3205.7375561946187!2d32.05173987551014!3d36.5363254723235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14dc99734bd003ad%3A0xd58c6b46bf156592!2zVcSfdXIgQXBhcnRtYW7EsQ!5e0!3m2!1sru!2sru!4v1686770407171!5m2!1sru!2sru" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </main>
+    <footer>
+        <p class="d-flex justify-content-center">©2023 by Turkish Home.</p>
+    </footer>
+</body>
+
+</html>
