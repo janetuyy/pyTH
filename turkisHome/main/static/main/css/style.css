@@ -247,3 +247,19 @@ li, #listContact {
     width: 60px;
     height: 60px;
 }
+
+.loadedPhoto {
+    height: 100%;
+    width: 306px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.alert-warning {
+    float: left;
+    clear: both;
+   /* margin: 5%; */
+    background: none;
+    border: none;
+}
+

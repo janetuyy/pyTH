@@ -89,7 +89,7 @@
             <div class="container justify-content-center d-flex align-items-center">
                 <div class="row justify-content-between">
                     <div class="col-3">
-                        <a href="index">
+                        <a href="{% url 'main' %}">
                             <img class="graficlogo d-none d-md-block align-items-center" src="{% static 'main/img/logoHead.svg' %}"
                                 alt="logo">
                             <img class="graficlogo d-md-none align-items-center" src="{% static 'main/img/offLogoTest.svg' %}" alt="logo">
@@ -134,7 +134,7 @@
                     <div class="col-md-6 col-12 justify-content-center d-flex align-items-center">
                         <dl class="mt-5">
                             <dt>
-                                <a href="flats"><img src="{% static 'main/img/btnRentFlat.svg' %}" alt="rent flat"></a>
+                                <a href="flats/"><img src="{% static 'main/img/btnRentFlat.svg' %}" alt="rent flat"></a>
                             </dt>
                             <dt>
                                 <a href="#"><img src="{% static 'main/img/btnRentCar.svg' %}" alt="rent car"></a>

@@ -1,0 +1,35 @@
+{% extends 'main/examp.html' %}
+
+{% block contentFlats %}
+    <div class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>{{ flats.title }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <img class="loadedPhotos rounded-start" src="{{ flats.cover1.url }}">
+                </div>
+                <div class="col-3">
+                    <img class="loadedPhotos" src="{{ flats.cover2.url }}">
+                    <img class="loadedPhotos mt-4" src="{{ flats.cover3.url }}">
+                </div>
+                <div class="col-3">
+                    <img class="loadedPhotos" src="{{ flats.cover4.url }}">
+                    <img class="loadedPhotos mt-4" src="{{ flats.cover5.url }}">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>{{ flats.full_text }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
