@@ -9,3 +9,4 @@ def flats(request):
 
 def new(request):
     return render(request, 'main/new.html')
+
