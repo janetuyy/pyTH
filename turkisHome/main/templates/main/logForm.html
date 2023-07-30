@@ -1,0 +1,67 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+    <title>Turkish Home</title>
+    <link href="{% static 'main/css/bootstrap/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'main/css/style.css' %}" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="body-main">
+    <script src="{% static 'main/js/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="{% static 'main/js/slick.min.js' %}"></script>
+    <script src="{% static 'main/js/script.js' %}"></script>
+
+    <header class="header">
+        <div class="nav">
+            <div class="container justify-content-center d-flex align-items-center">
+                <div class="row justify-content-between">
+                    <div class="col-3">
+                        <a href="{% url 'main' %}">
+                            <img class="graficlogo d-none d-md-block align-items-center" src="{% static 'main/img/logoHead.svg' %}"
+                                alt="logo">
+                            <img class="graficlogo d-md-none align-items-center" src="{% static 'main/img/offLogoTest.svg' %}" alt="logo">
+                        </a>
+                    </div>
+                    <div
+                        class="btnsMenu col-md-5 col-lg-4 col-sm-7 col-9 justify-content-between d-flex align-items-center">
+                        <button class="btnConsult">
+                            <a href="#aplicForm"><img class="graficlogo" src="{% static 'main/img/btnConsult.svg' %}" alt="contacts"></a>
+                        </button>
+
+                        <button class="btnContacts">
+                            <a href="#contactUs"><img class="graficlogo" src="{% static 'main/img/btnContacts.svg' %}" alt="contacts"></a>
+                        </button>
+
+                         <button class="btnContacts">
+                            <a href="#"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+        {% if messages %}
+        	{% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+        	{% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    <footer>
+        <p class="d-flex justify-content-center">©2023 by Turkish Home.</p>
+    </footer>
+</body>
+
+</html>
