@@ -1,0 +1,23 @@
+{% extends 'main/examp.html' %}
+
+{% block content %}
+    <div class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>{{ cars.title }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <img class="loadedPhotos rounded-start" src="{{ cars.cover.url }}">
+                </div>
+                <div class="col-6">
+                    <p>{{ cars.full_text }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

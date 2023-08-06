@@ -1,0 +1,24 @@
+{% extends 'main/examp.html' %}
+
+{% block content %}
+{% load static %}
+<div class="chooseVariant container mt-1">
+    <div class="row">
+        {% if cars %}
+            {% for el in cars %}
+                <div class="col-md-3 col-sm-6 col-12 alert alert-warning">
+                        <a href="{% url 'cars-detail' el.id %}"><img class="loadedPhoto" src="{{ el.cover.url }}"></a>
+                    <h3 class="mt-1">{{ el.title }}</h3>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Нет предложений по заданному фильтру</p>
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+{% endblock %}
+

@@ -104,14 +104,20 @@
                             <a href="#contactUs"><img class="graficlogo" src="{% static 'main/img/btnContacts.svg' %}" alt="contacts"></a>
                         </button>
 
-                         <button class="btnContacts">
-                            <a href="#"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>
-                        </button>
+
                             {% if user.is_authenticated %}
                                 <li>User: {{ user.get_username }}</li>
-                                <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+                                <li>
+                                    <button class="btnContacts">
+                                        <a href="{% url 'logout' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>
+                                    </button>
+                                </li>
                             {% else %}
-                                <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+                                 <li>
+                                    <button class="btnContacts">
+                                        <a href="{% url 'register' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>
+                                    </button>
+                                </li>
                            {% endif %}
                     </div>
                 </div>
@@ -147,20 +153,20 @@
                                 <a href="flats/"><img src="{% static 'main/img/btnRentFlat.svg' %}" alt="rent flat"></a>
                             </dt>
                             <dt>
-                                <a href="#"><img src="{% static 'main/img/btnRentCar.svg' %}" alt="rent car"></a>
+                                <a href="cars/"><img src="{% static 'main/img/btnRentCar.svg' %}" alt="rent car"></a>
                             </dt>
                             <dt>
-                                <a href="#"><img src="{% static 'main/img/btnCom.svg' %}" alt="commercy"></a>
+                                <a href="commercial/"><img src="{% static 'main/img/btnCom.svg' %}" alt="commercial"></a>
                             </dt>
                             <dt>
-                                <a href="new"><img src="{% static 'main/img/btnFirst.svg' %}" alt="new real estate"></a>
+                                <a href="new/"><img src="{% static 'main/img/btnFirst.svg' %}" alt="new real estate"></a>
                             </dt>
                             <dt>
-                                <a href="#"><img src="{% static 'main/img/btnSec.svg' %}" alt="secondary real estate"></a>
+                                <a href="secondary/"><img src="{% static 'main/img/btnSec.svg' %}" alt="secondary real estate"></a>
                             </dt>
-                            <dt>
-                                <a href="#"><img src="{% static 'main/img/btnTravel.svg' %}" alt="travel"></a>
-                            </dt>
+<!--                            <dt>-->
+<!--                                <a href="#"><img src="{% static 'main/img/btnTravel.svg' %}" alt="travel"></a>-->
+<!--                            </dt>-->
                         </dl>
                     </div>
                 </div>

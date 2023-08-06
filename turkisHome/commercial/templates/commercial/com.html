@@ -7,7 +7,7 @@
         <div class="col-md-12 justify-content-between d-flex align-items-center">
 
                     <button class="rEstateVariant">
-                        <a href="{% url 'flats_home' %}"><img class="graficlogo" src="{% static 'main/img/chooseFlatsBlack.svg' %}" alt="flats"></a>
+                        <a href="{% url 'flats_home' %}"><img class="graficlogo" src="{% static 'main/img/chooseFlatsWhite.svg' %}" alt="flats"></a>
                     </button>
 
                     <button class="rEstateVariant">
@@ -19,7 +19,7 @@
                     </button>
 
                     <button class="rEstateVariant">
-                        <a href="{% url 'commercial_home' %}"><img class="graficlogo" src="{% static 'main/img/chooseComWhite.svg' %}" alt="commercy"></a>
+                        <a href="{% url 'commercial_home' %}"><img class="graficlogo" src="{% static 'main/img/chooseComBlack.svg' %}" alt="commercial"></a>
                     </button>
 
                     <button class="rEstateVariant">
@@ -31,10 +31,10 @@
 </div>
 <div class="chooseVariant container mt-1">
     <div class="row">
-        {% if flats %}
-            {% for el in flats %}
+        {% if com %}
+            {% for el in com %}
                 <div class="col-md-3 col-sm-6 col-12 alert alert-warning">
-                        <a href="{% url 'flats-detail' el.id %}"><img class="loadedPhoto" src="{{ el.cover1.url }}"></a>
+                        <a href="{% url 'com-detail' el.id %}"><img class="loadedPhoto" src="{{ el.cover1.url }}"></a>
                     <h3 class="mt-1">{{ el.title }}</h3>
                 </div>
             {% endfor %}
