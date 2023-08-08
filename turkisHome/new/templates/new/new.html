@@ -1,49 +1,51 @@
 {% extends 'main/examp.html' %}
 
-{% block contentFlats %}
+{% block content %}
 {% load static %}
 <div class="headFlats bg-transparent shadow-none container mt-1">
     <div class="row">
         <div class="col-md-12 justify-content-between d-flex align-items-center">
 
                     <button class="rEstateVariant">
-                        <a href="flats"><img class="graficlogo" src="{% static 'main/img/chooseFlatsWhite.svg' %}" alt="rent flats"></a>
+                        <a href="{% url 'flats_home' %}"><img class="graficlogo" src="{% static 'main/img/chooseFlatsBlack.svg' %}" alt="flats"></a>
                     </button>
 
                     <button class="rEstateVariant">
-                        <a href="new"><img class="graficlogo" src="{% static 'main/img/chooseNewBlack.svg' %}" alt="new real estate"></a>
+                        <a href="{% url 'new_home' %}"><img class="graficlogo" src="{% static 'main/img/chooseNewWhite.svg' %}" alt="new"></a>
                     </button>
 
                     <button class="rEstateVariant">
-                        <a href="sec"><img class="graficlogo" src="{% static 'main/img/chooseSecWhite.svg' %}" alt="secondary real estate"></a>
+                        <a href="{% url 'secondary_home' %}"><img class="graficlogo" src="{% static 'main/img/chooseSecWhite.svg' %}" alt="secondary"></a>
                     </button>
 
                     <button class="rEstateVariant">
-                        <a href="com"><img class="graficlogo" src="{% static 'main/img/chooseComWhite.svg' %}" alt="commercy real estate"></a>
+                        <a href="{% url 'commercial_home' %}"><img class="graficlogo" src="{% static 'main/img/chooseComWhite.svg' %}" alt="commercy"></a>
                     </button>
 
-                    <button class="rEstateVariant">
-                        <a href="#"><img class="graficlogo" src="{% static 'main/img/settingsButton.svg' %}" alt="settings"></a>
-                    </button>
+<!--                    <button class="rEstateVariant">-->
+<!--                        <a href="#"><img class="graficlogo" src="{% static 'main/img/settingsButton.svg' %}" alt="settings"></a>-->
+<!--                    </button>-->
 
         </div>
     </div>
 </div>
-<div class="chooseVariant container mt-5">
+<div class="chooseVariant container mt-1">
     <div class="row">
-        <div class="col-md-3">
+        {% if flats %}
+            {% for el in flats %}
+                <div class="col-md-3 col-sm-6 col-12 alert alert-warning">
+                        <a href="{% url 'flats-detail' el.id %}"><img class="loadedPhoto" src="{{ el.cover1.url }}"></a>
+                    <h3 class="mt-1">{{ el.title }}</h3>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Нет предложений по заданному фильтру</p>
+        {% endif %}
 
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-
-        </div>
     </div>
+
 </div>
+
 
 {% endblock %}
+

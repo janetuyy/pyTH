@@ -258,7 +258,6 @@ li, #listContact {
 .alert-warning {
     float: left;
     clear: both;
-   /* margin: 5%; */
     background: none;
     border: none;
 }
