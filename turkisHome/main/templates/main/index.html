@@ -389,24 +389,25 @@
                     </div>
                     <div class="col-md-6 col-12 justify-content-center d-flex align-items-center">
                         <!-- форма обратной связи -->
-                        <form action="#" class="form">
+                        <form action="{% url 'feedback_view' %}" class="form" method="POST">
+                            {% csrf_token %}
                             <h3 id="titleForm">Запишитесь на бесплатную консультацию,<br>
                                 мы сами с вами свяжемся</h3>
                             <!-- Каждый input для выравнивания вкладываем в блок input-box -->
                             <div class="input-box justify-content-center d-flex align-items-center">
-                                <input type="text" placeholder="Ваше имя" />
+                                <input name="name" type="text" placeholder="Ваше имя" />
                             </div>
                             <div class="input-box justify-content-center d-flex align-items-center">
-                                <input type="text" placeholder="Введите email" />
+                                <input name="email" type="text" placeholder="Введите email" />
                             </div>
                             <div class="input-box justify-content-center d-flex align-items-center">
-                                <input type="text" placeholder="Введите телефон" />
+                                <input name="phone" type="text" placeholder="Введите телефон" />
                             </div>
                             <div class="input-box message-box justify-content-center d-flex align-items-center">
-                                <textarea placeholder="Сообщение"></textarea>
+                                <textarea name="message" placeholder="Сообщение"></textarea>
                             </div>
                             <div class="button justify-content-center d-flex align-items-center">
-                                <input type="button" value="Отправить" />
+                                <input type="submit" value="Отправить" />
                             </div>
                         </form>
                     </div>
