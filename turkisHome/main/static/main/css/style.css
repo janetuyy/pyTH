@@ -50,9 +50,23 @@ button {
 
 .btnContacts, .btnConsult, .rEstateVariant {
     background: transparent;
-    
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 10px;
 }
 
+.btnConsult {
+    background: #588F27;
+    border: none;
+}
+.btnContacts {
+    border-color: #588F27;
+}
+.btnText {
+    color: white;
+    text-decoration: none;
+}
 
 h1 {
     color: white;
