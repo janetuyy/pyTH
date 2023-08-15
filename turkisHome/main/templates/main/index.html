@@ -95,16 +95,15 @@
                             <img class="graficlogo d-md-none align-items-center" src="{% static 'main/img/offLogoTest.svg' %}" alt="logo">
                         </a>
                     </div>
-                    <div class="btnsMenu col-md-5 col-lg-4 col-sm-7 col-9 justify-content-between d-flex align-items-center">
-                        <button type="button" class="btnConsult btn btn-success d-none d-md-block">
-                            <a class="btnText" href="#aplicForm">Связаться</a>
-                        </button>
-
-                        <button  type="button" class="btnContacts btn btn-success d-none d-md-block">
-                            <a class="btnText" href="#contactUs">Контакты</a>
-                        </button>
-
-
+                    <div class="col-9 d-flex align-items-center justify-content-end">
+                        <div class="dropdown">
+                            <button onclick="menuFunction()" class="dropbtn">Меню</button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="#">Профиль</a>
+                                <a href="#aplicForm">Связаться</a>
+                                <a href="#contactUs">Контакты</a>
+                            </div>
+                        </div>
                             {% if user.is_authenticated %}
                                 <li>User: {{ user.get_username }}</li>
                                 <li>
@@ -406,8 +405,8 @@
                             <div class="input-box message-box justify-content-center d-flex align-items-center">
                                 <textarea name="message" placeholder="Сообщение"></textarea>
                             </div>
-                            <div class="button justify-content-center d-flex align-items-center">
-                                <input type="submit" value="Отправить" />
+                            <div class="button justify-content-center d-flex align-items-center mt-4">
+                                <input class="btnConsult" type="submit" value="Отправить" />
                             </div>
                         </form>
                     </div>
