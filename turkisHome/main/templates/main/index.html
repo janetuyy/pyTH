@@ -96,14 +96,6 @@
                         </a>
                     </div>
                     <div class="col-9 d-flex align-items-center justify-content-end">
-                        <div class="dropdown">
-                            <button onclick="menuFunction()" class="dropbtn">Меню</button>
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="#">Профиль</a>
-                                <a href="#aplicForm">Связаться</a>
-                                <a href="#contactUs">Контакты</a>
-                            </div>
-                        </div>
                             {% if user.is_authenticated %}
                                 <li>User: {{ user.get_username }}</li>
                                 <li>
@@ -118,6 +110,14 @@
                                     </button>
                                 </li>
                            {% endif %}
+                        <div class="dropdown">
+                            <button onclick="menuFunction()" class="dropbtn">Меню</button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="#">Профиль</a>
+                                <a href="#aplicForm">Связаться</a>
+                                <a href="#contactUs">Контакты</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
