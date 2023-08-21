@@ -14,4 +14,4 @@ def register(request):
 			return redirect('/')
 	else:
 		form = UserRegisterForm()
-	return render(request, 'users/register.html', {'form': form})
+	return render(request, 'users/profile.html', {'form': form})

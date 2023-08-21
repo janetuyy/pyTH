@@ -1,128 +1,67 @@
+{% extends 'main/examp.html' %}
 {% load static %}
 
-<!doctype html>
-<html lang="ru">
+<!--<!doctype html>-->
+<!--<html lang="ru">-->
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
-    <title>Turkish Home</title>
-    <link href="{% static 'main/css/bootstrap/bootstrap.css' %}" rel="stylesheet">
-    <link href="{% static 'main/css/style.css' %}" rel="stylesheet">
-    <style>
-                .services {
-                    background-image: url("{% static 'main/img/alanya.svg' %}");
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                }
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">-->
+<!--    <title>Turkish Home</title>-->
+<!--    <link href="{% static 'main/css/bootstrap/bootstrap.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'main/css/style.css' %}" rel="stylesheet">-->
 
-                .slider#f1 {
-                    background-image: url("{% static 'main/img/bFlat1.svg' %}");
-                }
-                .slider#f2 {
-                    background-image: url("{% static 'main/img/bFlat2.svg' %}");
-                }
-                .slider#f3 {
-                    background-image: url("{% static 'main/img/bFlat3.svg' %}");
-                }
-                .slider#f4 {
-                    background-image: url("{% static 'main/img/bFlat4.svg' %}");
-                }
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">-->
 
-                .slider#c1 {
-                    background-image: url("{% static 'main/img/bCom1.svg' %}");
-                }
-                .slider#c2 {
-                    background-image: url("{% static 'main/img/bCom2.svg' %}");
-                }
-                .slider#c3 {
-                    background-image: url("{% static 'main/img/bCom3.svg' %}");
-                }
-                .slider#c4 {
-                    background-image: url("{% static 'main/img/bCom4.svg' %}");
-                }
+<!--</head>-->
 
-                .slider#cr1 {
-                    background-image: url("{% static 'main/img/bCar1.svg' %}");
-                }
-                .slider#cr2 {
-                    background-image: url("{% static 'main/img/bCar2.svg' %}");
-                }
-                .slider#cr3 {
-                    background-image: url("{% static 'main/img/bCar3.svg' %}");
-                }
-                .slider#cr4 {
-                    background-image: url("{% static 'main/img/bCar4.svg' %}");
-                }
+<!--<body class="body-main">-->
+<!--    <script src="{% static 'main/js/bootstrap/bootstrap.min.js' %}"></script>-->
+<!--    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>-->
+<!--    <script src="{% static 'main/js/slick.min.js' %}"></script>-->
+<!--    <script src="{% static 'main/js/script.js' %}"></script>-->
 
-                .aplicForm {
-                    background-image: url("{% static 'main/img/aplicationForm.svg' %}");
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                }
-
-                .slick-prev{
-                    width: 40px;
-                    height: 40px;
-                    background: url("{% static 'main/img/left.svg' %}") 0 0 / 100% no-repeat;
-                }
-
-                .slick-next.slick-arrow{
-                    width: 40px;
-                    height: 40px;
-                    background: url("{% static 'main/img/right.svg' %}") 0 0 / 100% no-repeat;
-                }
-    </style>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-
-</head>
-
-<body class="body-main">
-    <script src="{% static 'main/js/bootstrap/bootstrap.min.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="{% static 'main/js/slick.min.js' %}"></script>
-    <script src="{% static 'main/js/script.js' %}"></script>
-
-    <header class="header">
-        <div class="nav">
-            <div class="container justify-content-center d-flex align-items-center">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-3">
-                        <a href="{% url 'main' %}">
-                            <img class="graficlogo d-none d-md-block align-items-center" src="{% static 'main/img/logoHead.svg' %}"
-                                alt="logo">
-                            <img class="graficlogo d-md-none align-items-center" src="{% static 'main/img/offLogoTest.svg' %}" alt="logo">
-                        </a>
-                    </div>
-                    <div class="col-9 d-flex align-items-center justify-content-end">
-                            {% if user.is_authenticated %}
-                                <li>User: {{ user.get_username }}</li>
-                                <li>
-                                    <button class="btnContacts">
-                                        <a href="{% url 'logout' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>
-                                    </button>
-                                </li>
-                            {% else %}
-                                 <li>
-                                    <button class="btnContacts">
-                                        <a href="{% url 'register' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>
-                                    </button>
-                                </li>
-                           {% endif %}
-                        <div class="dropdown">
-                            <button onclick="menuFunction()" class="dropbtn">Меню</button>
-                            <div id="myDropdown" class="dropdown-content">
-                                <a href="#">Профиль</a>
-                                <a href="#aplicForm">Связаться</a>
-                                <a href="#contactUs">Контакты</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<!--    <header class="header">-->
+<!--        <div class="nav">-->
+<!--            <div class="container justify-content-center d-flex align-items-center">-->
+<!--                <div class="row justify-content-between align-items-center">-->
+<!--                    <div class="col-3">-->
+<!--                        <a href="{% url 'main' %}">-->
+<!--                            <img class="graficlogo d-none d-md-block align-items-center" src="{% static 'main/img/logoHead.svg' %}"-->
+<!--                                alt="logo">-->
+<!--                            <img class="graficlogo d-md-none align-items-center" src="{% static 'main/img/offLogoTest.svg' %}" alt="logo">-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    <div class="col-9 d-flex align-items-center justify-content-end">-->
+<!--                            {% if user.is_authenticated %}-->
+<!--                                <li>User: {{ user.get_username }}</li>-->
+<!--                                <li>-->
+<!--                                    <button class="btnContacts">-->
+<!--                                        <a href="{% url 'logout' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>-->
+<!--                                    </button>-->
+<!--                                </li>-->
+<!--                            {% else %}-->
+<!--                                 <li>-->
+<!--                                    <button class="btnContacts">-->
+<!--                                        <a href="{% url 'register' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>-->
+<!--                                    </button>-->
+<!--                                </li>-->
+<!--                           {% endif %}-->
+<!--                        <div class="dropdown">-->
+<!--                            <button onclick="menuFunction()" class="dropbtn">Меню</button>-->
+<!--                            <div id="myDropdown" class="dropdown-content">-->
+<!--                                <a href="#">Профиль</a>-->
+<!--                                <a href="#aplicForm">Связаться</a>-->
+<!--                                <a href="#contactUs">Контакты</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </header>-->
+    {% block content %}
     <main>
 
         <!-- картинка главной странички -->
@@ -173,7 +112,13 @@
         </section>
 
         <!-- инфа об услугах -->
-
+        <style>
+                .services {
+                    background-image: url("{% static 'main/img/alanya.svg' %}");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+        </style>
         <section class="infoclass mt-5">
             <div class="container justify-content-center d-flex align-items-center">
                 <div class="row">
@@ -202,7 +147,33 @@
         </section>
 
         <!-- квартиры -->
+            <style>
 
+                .slider#f1 {
+                    background-image: url("{% static 'main/img/bFlat1.svg' %}");
+                }
+                .slider#f2 {
+                    background-image: url("{% static 'main/img/bFlat2.svg' %}");
+                }
+                .slider#f3 {
+                    background-image: url("{% static 'main/img/bFlat3.svg' %}");
+                }
+                .slider#f4 {
+                    background-image: url("{% static 'main/img/bFlat4.svg' %}");
+                }
+
+                .slick-prev{
+                    width: 40px;
+                    height: 40px;
+                    background: url("{% static 'main/img/left.svg' %}") 0 0 / 100% no-repeat;
+                }
+
+                .slick-next.slick-arrow{
+                    width: 40px;
+                    height: 40px;
+                    background: url("{% static 'main/img/right.svg' %}") 0 0 / 100% no-repeat;
+                }
+            </style>
         <section class="mt-5">
             <hr>
             <h1 id="nameOfBlock" class="justify-content-center d-flex align-items-center">недвижимость</h1>
@@ -286,7 +257,20 @@
         </div>
 
         <!-- коммерческая недвижимость -->
-
+        <style>
+                .slider#c1 {
+                    background-image: url("{% static 'main/img/bCom1.svg' %}");
+                }
+                .slider#c2 {
+                    background-image: url("{% static 'main/img/bCom2.svg' %}");
+                }
+                .slider#c3 {
+                    background-image: url("{% static 'main/img/bCom3.svg' %}");
+                }
+                .slider#c4 {
+                    background-image: url("{% static 'main/img/bCom4.svg' %}");
+                }
+        </style>
         <section class="mt-5">
             <div class="justify-content-between d-flex align-items-center">
                 <hr class="reel">
@@ -359,7 +343,13 @@
         </div>
 
         <!-- оставить заявку -->
-
+        <style>
+                .aplicForm {
+                    background-image: url("{% static 'main/img/aplicationForm.svg' %}");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+        </style>
         <section id="aplicForm" class="aplicForm mt-5">
             <div class="container justify-content-center d-flex align-items-center">
                 <div class="row justify-content-center">
@@ -416,7 +406,20 @@
         </section>
 
         <!-- автомобили -->
-
+        <style>
+                .slider#cr1 {
+                    background-image: url("{% static 'main/img/bCar1.svg' %}");
+                }
+                .slider#cr2 {
+                    background-image: url("{% static 'main/img/bCar2.svg' %}");
+                }
+                .slider#cr3 {
+                    background-image: url("{% static 'main/img/bCar3.svg' %}");
+                }
+                .slider#cr4 {
+                    background-image: url("{% static 'main/img/bCar4.svg' %}");
+                }
+        </style>
         <section class="mt-5">
             <div class="justify-content-between d-flex align-items-center">
                 <hr class="reel">
@@ -490,9 +493,10 @@
 
         <iframe class="mt-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3205.7375561946187!2d32.05173987551014!3d36.5363254723235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14dc99734bd003ad%3A0xd58c6b46bf156592!2zVcSfdXIgQXBhcnRtYW7EsQ!5e0!3m2!1sru!2sru!4v1686770407171!5m2!1sru!2sru" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </main>
-    <footer>
-        <p class="d-flex justify-content-center">©2023 by Turkish Home.</p>
-    </footer>
-</body>
+    {% endblock %}
+<!--    <footer>-->
+<!--        <p class="d-flex justify-content-center">©2023 by Turkish Home.</p>-->
+<!--    </footer>-->
+<!--</body>-->
 
-</html>
+<!--</html>-->
