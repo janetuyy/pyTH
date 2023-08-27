@@ -32,6 +32,7 @@ urlpatterns = [
     path('feedback/', include('feedback.urls')),
     path('users/', include('django.contrib.auth.urls'), name='users'),
     path('register/', user_views.register, name='register'),
+    path('profile/', include('users.urls'), name='profile'),
 ]
 
 if settings.DEBUG:

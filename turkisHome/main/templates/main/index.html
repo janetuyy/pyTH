@@ -1,66 +1,7 @@
 {% extends 'main/examp.html' %}
 {% load static %}
 
-<!--<!doctype html>-->
-<!--<html lang="ru">-->
 
-<!--<head>-->
-<!--    <meta charset="utf-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">-->
-<!--    <title>Turkish Home</title>-->
-<!--    <link href="{% static 'main/css/bootstrap/bootstrap.css' %}" rel="stylesheet">-->
-<!--    <link href="{% static 'main/css/style.css' %}" rel="stylesheet">-->
-
-<!--    <link rel="preconnect" href="https://fonts.gstatic.com">-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">-->
-
-<!--</head>-->
-
-<!--<body class="body-main">-->
-<!--    <script src="{% static 'main/js/bootstrap/bootstrap.min.js' %}"></script>-->
-<!--    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>-->
-<!--    <script src="{% static 'main/js/slick.min.js' %}"></script>-->
-<!--    <script src="{% static 'main/js/script.js' %}"></script>-->
-
-<!--    <header class="header">-->
-<!--        <div class="nav">-->
-<!--            <div class="container justify-content-center d-flex align-items-center">-->
-<!--                <div class="row justify-content-between align-items-center">-->
-<!--                    <div class="col-3">-->
-<!--                        <a href="{% url 'main' %}">-->
-<!--                            <img class="graficlogo d-none d-md-block align-items-center" src="{% static 'main/img/logoHead.svg' %}"-->
-<!--                                alt="logo">-->
-<!--                            <img class="graficlogo d-md-none align-items-center" src="{% static 'main/img/offLogoTest.svg' %}" alt="logo">-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    <div class="col-9 d-flex align-items-center justify-content-end">-->
-<!--                            {% if user.is_authenticated %}-->
-<!--                                <li>User: {{ user.get_username }}</li>-->
-<!--                                <li>-->
-<!--                                    <button class="btnContacts">-->
-<!--                                        <a href="{% url 'logout' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>-->
-<!--                                    </button>-->
-<!--                                </li>-->
-<!--                            {% else %}-->
-<!--                                 <li>-->
-<!--                                    <button class="btnContacts">-->
-<!--                                        <a href="{% url 'register' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>-->
-<!--                                    </button>-->
-<!--                                </li>-->
-<!--                           {% endif %}-->
-<!--                        <div class="dropdown">-->
-<!--                            <button onclick="menuFunction()" class="dropbtn">Меню</button>-->
-<!--                            <div id="myDropdown" class="dropdown-content">-->
-<!--                                <a href="#">Профиль</a>-->
-<!--                                <a href="#aplicForm">Связаться</a>-->
-<!--                                <a href="#contactUs">Контакты</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </header>-->
     {% block content %}
     <main>
 
@@ -86,24 +27,24 @@
                         <h1>НАШИ УСЛУГИ</h1>
                     </div>
                     <div class="col-md-6 col-12 justify-content-center d-flex align-items-center">
-                        <dl class="mt-5">
-                            <dt>
-                                <a href="flats/"><img src="{% static 'main/img/btnRentFlat.svg' %}" alt="rent flat"></a>
+                        <dl class="mt-5 mb-5">
+                            <dt class="justify-content-center d-flex align-items-center">
+                                <a href="flats/"><button class="servicesBtn"><a>АРЕНДА КВАРТИР</a></button></a>
                             </dt>
-                            <dt>
-                                <a href="cars/"><img src="{% static 'main/img/btnRentCar.svg' %}" alt="rent car"></a>
+                            <dt class="justify-content-center d-flex align-items-center mt-3">
+                                <a href="cars/"><button class="servicesBtn"><a>АРЕНДА АВТО</a></button></a>
                             </dt>
-                            <dt>
-                                <a href="commercial/"><img src="{% static 'main/img/btnCom.svg' %}" alt="commercial"></a>
+                            <dt class="justify-content-center d-flex align-items-center mt-3">
+                                <a href="commercial/"><button class="servicesBtn"><a>КОММЕРЧЕСКАЯ НЕДВИЖИМОСТЬ</a></button></a>
                             </dt>
-                            <dt>
-                                <a href="new/"><img src="{% static 'main/img/btnFirst.svg' %}" alt="new real estate"></a>
+                            <dt class="justify-content-center d-flex align-items-center mt-3">
+                                <a href="new/"><button class="servicesBtn"><a>НОВОСТРОЙКИ</a></button></a>
                             </dt>
-                            <dt>
-                                <a href="secondary/"><img src="{% static 'main/img/btnSec.svg' %}" alt="secondary real estate"></a>
+                            <dt class="justify-content-center d-flex align-items-center mt-3">
+                                <a href="secondary/"><button class="servicesBtn"><a>ВТОРИЧНЫЙ РЫНОК</a></button></a>
                             </dt>
-                            <dt>
-                                <a href="#"><img src="{% static 'main/img/btnTravel.svg' %}" alt="travel"></a>
+                            <dt class="justify-content-center d-flex align-items-center mt-3">
+                                <a href="#"><button class="servicesBtn"><a>ПУТЕШЕСТВИЯ</a></button></a>
                             </dt>
                         </dl>
                     </div>
@@ -251,7 +192,7 @@
         <div class="container mt-3 justify-content-center d-flex align-items-center">
             <div class="row justify-content-center d-flex">
                 <div class="col-lg-3 justify-content-center d-flex">
-                    <a href="#"><img class="seeMore" src="{% static 'main/img/all.svg' %}" alt="see more"></a>
+                    <a href="#"><button class="btnContacts">смотреть все</button></a>
                 </div>
             </div>
         </div>

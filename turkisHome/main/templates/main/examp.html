@@ -35,22 +35,19 @@
                     <div class="col-9 d-flex align-items-center justify-content-end">
                             {% if user.is_authenticated %}
                                 <li>User: {{ user.get_username }}</li>
-                                <li>
-                                    <button class="btnContacts">
-                                        <a href="{% url 'logout' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>
-                                    </button>
-                                </li>
+                                <a href="{% url 'profile' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>
                             {% else %}
-                                 <li>
-                                    <button class="btnContacts">
-                                        <a href="{% url 'register' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>
-                                    </button>
-                                </li>
+                                <a href="{% url 'register' %}?next={{request.path}}"><img class="graficlogo" src="{% static 'main/img/person.svg' %}" alt="contacts"></a>
                            {% endif %}
                         <div class="dropdown">
                             <button onclick="menuFunction()" class="dropbtn">Меню</button>
                             <div id="myDropdown" class="dropdown-content">
-                                <a href="#">Профиль</a>
+                                <a href="{% url 'profile' %}?next={{request.path}}">Профиль</a>
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'logout' %}?next={{request.path}}">Выйти</a>
+                            {% else %}
+                                 <a href="{% url 'register' %}?next={{request.path}}">Авторизация</a>
+                           {% endif %}
                                 <a href="{% url 'main' %}?next=#aplicForm">Связаться</a>
                                 <a href="{% url 'main' %}?next=#contactUs">Контакты</a>
                             </div>
